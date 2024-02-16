@@ -5,4 +5,8 @@
 *.out
 *.synctex.gz
 *.toc
+*.cmake
+/projekt/CMakeFiles/
+/projekt/.vscode/
+/projekt/CMakeCache.txt
 
