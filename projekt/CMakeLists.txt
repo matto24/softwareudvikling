@@ -10,7 +10,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-include_directories(include)
+
+list(APPEND CMAKE_PREFIX_PATH "/home/mads/wxWidgets-3.2.2.1")	 
+find_package(wxWidgets REQUIRED COMPONENTS net core base)
+include(${wxWidgets_USE_FILE})
+
+include_directories(include ${wxWidgets_INCLUDE_DIRS})
 file(GLOB SRC_FILES
 include/*.h
 src/*.cpp
@@ -18,6 +23,7 @@ src/*.cpp
 
 add_executable(restaurant ${SRC_FILES})
 target_link_libraries(restaurant mysqlcppconn)
+target_link_libraries(restaurant ${wxWidgets_LIBRARIES})
 
 install(TARGETS
   restaurant

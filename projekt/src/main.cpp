@@ -6,6 +6,9 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h> 
 
+//Include wxwidgets
+#include <wx/wx.h>
+
 
 using namespace std;
 using namespace sql;
