@@ -1,0 +1,57 @@
+\section{Normalisering af databaser}
+
+
+Normalisering af en database er processen hvorved en relation/tabels funktionelle afhængigheder og primære nøgler
+analyseres med henblik på visse designkrav, som kan formuleres meget teoretisk. I runde tal skal vi undgå
+tomme felter/celler og undgå redundante data med risiko for inkonsistens.
+
+
+\textbf{Definition}
+En tabels normalform refererer til den højest normalformsbetingelse en tabel opfylder.
+
+\textbf{Første normalform}
+
+Hvis en tabel skal opfylde første normalform, må den kun indeholde atomare attributter, og der må ikke være
+gentagelser af attributter.
+
+\textbf{Anden normalform}
+
+Hvis første normalform er opfyld, og, hvis der er tale om en sammensat primærnøgle, alle attributter
+afhænger af hele nøglen, og ikke kun en del af den.
+
+Eksempel på en tabel der ikke opfylder 2. normalform:
+
+\begin{tabular}{|c|c|c|c|c|}
+	Essn & Pno & Hours & Ename
+\end{tabular}
+
+Dette opfylder ikke 2. normalform, da Ename kun afhænger af Essn og
+dermed ikke hele primærnøglen.
+Det skyldes at hele primærnøglen består af Essn og Pno.
+
+\textbf{Tredje normalform}
+
+En tabel opfylder tredje normalform, hvis den opfylder 2. normalform,
+og hvis der ikke forekommer transitive afhængigheder, dvs. at der ikke
+er attributter, som alene afhænger af en anden ikke nøgle-attribut.
+
+Et eksempel på dette kan være en tabel over en person med attributterne
+
+\begin{center}
+	CPR, Navn, Adresse, Postnummer, By
+\end{center}
+
+Hvor by afhænger af postnummer, som ikke er en del af primærnøglen.
+
+
+
+\textbf{Fjerde normalform}
+
+Selv hvis attributterne begge afhænger af primærnøglen men ellers er
+uafhængige skal de deles op.
+
+
+\textbf{Femte normalform}
+
+Også kendt som "Projection-join normal form" er en normalform, der er
+designet til at minimere redundans i en database.

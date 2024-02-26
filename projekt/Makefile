@@ -174,29 +174,77 @@ restaurant/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/build
 .PHONY : restaurant/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/app.o: src/app.cpp.o
+.PHONY : src/app.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/app.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/app.cpp.o
+.PHONY : src/app.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/app.i: src/app.cpp.i
+.PHONY : src/app.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/app.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/app.cpp.i
+.PHONY : src/app.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/app.s: src/app.cpp.s
+.PHONY : src/app.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/app.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/app.cpp.s
+.PHONY : src/app.cpp.s
+
+src/database.o: src/database.cpp.o
+.PHONY : src/database.o
+
+# target to build an object file
+src/database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/database.cpp.o
+.PHONY : src/database.cpp.o
+
+src/database.i: src/database.cpp.i
+.PHONY : src/database.i
+
+# target to preprocess a source file
+src/database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/database.cpp.i
+.PHONY : src/database.cpp.i
+
+src/database.s: src/database.cpp.s
+.PHONY : src/database.s
+
+# target to generate assembly for a file
+src/database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/database.cpp.s
+.PHONY : src/database.cpp.s
+
+src/mainFrame.o: src/mainFrame.cpp.o
+.PHONY : src/mainFrame.o
+
+# target to build an object file
+src/mainFrame.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/mainFrame.cpp.o
+.PHONY : src/mainFrame.cpp.o
+
+src/mainFrame.i: src/mainFrame.cpp.i
+.PHONY : src/mainFrame.i
+
+# target to preprocess a source file
+src/mainFrame.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/mainFrame.cpp.i
+.PHONY : src/mainFrame.cpp.i
+
+src/mainFrame.s: src/mainFrame.cpp.s
+.PHONY : src/mainFrame.s
+
+# target to generate assembly for a file
+src/mainFrame.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/restaurant.dir/build.make CMakeFiles/restaurant.dir/src/mainFrame.cpp.s
+.PHONY : src/mainFrame.cpp.s
 
 # Help Target
 help:
@@ -211,9 +259,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... restaurant"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/app.o"
+	@echo "... src/app.i"
+	@echo "... src/app.s"
+	@echo "... src/database.o"
+	@echo "... src/database.i"
+	@echo "... src/database.s"
+	@echo "... src/mainFrame.o"
+	@echo "... src/mainFrame.i"
+	@echo "... src/mainFrame.s"
 .PHONY : help
 
 

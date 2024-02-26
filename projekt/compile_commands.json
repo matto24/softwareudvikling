@@ -1,7 +1,17 @@
 [
 {
   "directory": "/home/mads/Documents/4.semester/software/projekt",
-  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXGTK__ -I/home/mads/Documents/4.semester/software/projekt/include -isystem /usr/local/lib/wx/include/gtk3-unicode-3.2 -isystem /usr/local/include/wx-3.2  -pthread -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/restaurant.dir/src/main.cpp.o -c /home/mads/Documents/4.semester/software/projekt/src/main.cpp",
-  "file": "/home/mads/Documents/4.semester/software/projekt/src/main.cpp"
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXGTK__ -I/home/mads/Documents/4.semester/software/projekt/include -isystem /usr/local/lib/wx/include/gtk3-unicode-3.2 -isystem /usr/local/include/wx-3.2  -pthread -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/restaurant.dir/src/app.cpp.o -c /home/mads/Documents/4.semester/software/projekt/src/app.cpp",
+  "file": "/home/mads/Documents/4.semester/software/projekt/src/app.cpp"
+},
+{
+  "directory": "/home/mads/Documents/4.semester/software/projekt",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXGTK__ -I/home/mads/Documents/4.semester/software/projekt/include -isystem /usr/local/lib/wx/include/gtk3-unicode-3.2 -isystem /usr/local/include/wx-3.2  -pthread -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/restaurant.dir/src/database.cpp.o -c /home/mads/Documents/4.semester/software/projekt/src/database.cpp",
+  "file": "/home/mads/Documents/4.semester/software/projekt/src/database.cpp"
+},
+{
+  "directory": "/home/mads/Documents/4.semester/software/projekt",
+  "command": "/usr/bin/c++ -DWXUSINGDLL -D_FILE_OFFSET_BITS=64 -D__WXGTK__ -I/home/mads/Documents/4.semester/software/projekt/include -isystem /usr/local/lib/wx/include/gtk3-unicode-3.2 -isystem /usr/local/include/wx-3.2  -pthread -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/restaurant.dir/src/mainFrame.cpp.o -c /home/mads/Documents/4.semester/software/projekt/src/mainFrame.cpp",
+  "file": "/home/mads/Documents/4.semester/software/projekt/src/mainFrame.cpp"
 }
 ]
