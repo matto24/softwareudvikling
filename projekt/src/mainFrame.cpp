@@ -55,5 +55,4 @@ void MainFrame::displayMenu() {
         listView->SetItem(i, 1, cost);
         listView->SetItem(i, 2, desc);
     }
-    std::cout << description[6] << std::endl;
 }
