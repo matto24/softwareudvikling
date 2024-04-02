@@ -23,7 +23,12 @@ std::vector<std::string> Database::getInfo(std::string query)
         stmt = conn->createStatement();
 
         // Execute the query
-        res = stmt->executeQuery("SELECT * FROM menu");
+        res = stmt->executeQuery(query);
+
+        while(res->next())
+        {
+            result.push_back(res->getString("dname"));
+        }
 
     }
     catch (sql::SQLException &e)

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(restaurant)
+project(pa2)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -22,12 +22,12 @@ include/*.h
 src/*.cpp
 )
 
-add_executable(restaurant ${SRC_FILES})
-target_link_libraries(restaurant mysqlcppconn)
-target_link_libraries(restaurant ${wxWidgets_LIBRARIES})
+add_executable(pa2 ${SRC_FILES})
+target_link_libraries(pa2 mysqlcppconn)
+target_link_libraries(pa2 ${wxWidgets_LIBRARIES})
 
 install(TARGETS
-  restaurant
+  pa2
   DESTINATION lib/${PROJECT_NAME})
 
 
