@@ -49,13 +49,13 @@ sql::ResultSet *Database::getInfo(std::string query)
     return res;
 }
 
-void Database::addTask(std::string taskname) {
+void Database::addTask(std::string taskName) {
     try
     {
         //Prepare statement
         pstmt = conn->prepareStatement("INSERT INTO task(name) VALUES(?)");
         //Replace ? with taskname
-        pstmt -> setString(1, taskname);
+        pstmt -> setString(1, taskName);
         //Execute update
         pstmt->executeUpdate();
 
@@ -66,3 +66,31 @@ void Database::addTask(std::string taskname) {
         std::cout << "Error: " << e.what() << std::endl;
     }
 }
+
+void Database::removeTask() {
+     try
+    {
+        //Find first task
+        res = getInfo("SELECT name FROM task LIMIT 1");
+        if (res->next()) {
+            std::string taskName = res->getString("name");
+            std::cout << "Task completed: " << res->getString("name") << std::endl;
+
+            //Prepare statement
+            pstmt = conn->prepareStatement("DELETE FROM task WHERE name = ?");
+            //Replace ? with taskname
+            pstmt -> setString(1, taskName);
+            //Execute update
+            pstmt->executeUpdate();
+        } else {
+            std::cout << "No tasks found" << std::endl;
+        }
+
+
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+}  

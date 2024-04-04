@@ -30,4 +30,7 @@ public:
     //add task
     void addTask(std::string taskName);
 
+    //remove task
+    void removeTask();
+
 };
