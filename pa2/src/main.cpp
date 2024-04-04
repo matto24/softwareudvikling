@@ -6,15 +6,12 @@ int main()
 {
     
     Database db;
+    db.connectionInit();
 
+    Client cl;
 
+    cl.printTasks();
 
-    std::vector<std::string> result = db.getInfo("SELECT * FROM department");
-
-    for (int i=0; i<result.size(); i++) {
-        std::cout << result[i] << std::endl;
-    }
-
-
+    db.~Database();
     return 0;
 }
