@@ -1,14 +1,22 @@
 #include <iostream>
 #include "database.h"
 
-std::vector<std::string> Database::getInfo(std::string query)
-{
-    sql::Driver *driver;
-    sql::Connection *conn;
-    sql::Statement *stmt;
-    sql::ResultSet *res;
-    std::vector<std::string> result;
 
+Database::Database() {
+    driver = nullptr;
+    conn = nullptr;
+    stmt = nullptr;
+    res = nullptr;
+}
+
+Database::~Database() {
+    delete res;
+    delete stmt;
+    delete conn;
+}
+
+
+void Database::connectionInit() {
     try
     {
         // Create a connection
@@ -17,18 +25,7 @@ std::vector<std::string> Database::getInfo(std::string query)
             driver->connect("tcp://127.0.0.1:3306", "root", "Scrambler3Starting");
 
         // Specify the database to use
-        conn->setSchema("Company");
-
-        // Create a statement object
-        stmt = conn->createStatement();
-
-        // Execute the query
-        res = stmt->executeQuery(query);
-
-        while(res->next())
-        {
-            result.push_back(res->getString("dname"));
-        }
+        conn->setSchema("robot_worker");
 
     }
     catch (sql::SQLException &e)
@@ -37,10 +34,33 @@ std::vector<std::string> Database::getInfo(std::string query)
         std::cout << "Error: " << e.what() << std::endl;
     }
 
-    // Clean up
-    delete res;
-    delete stmt;
-    delete conn;
+}
+
+
+
+std::vector<std::string> Database::getInfo(std::string query)
+{
+    std::vector<std::string> result;
+
+    try
+    {
+        // Create a statement object
+        stmt = conn->createStatement();
+
+        // Execute the query
+        res = stmt->executeQuery(query);
+
+        while(res->next())
+        {
+            result.push_back(res->getString("name"));
+        }
+
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 
     // Return result
     return result;

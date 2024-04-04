@@ -12,7 +12,17 @@
 class Database
 {
 private:
-    
+    sql::Driver *driver;
+    sql::Connection *conn;
+    sql::Statement *stmt;
+    sql::ResultSet *res;
+
 public:
+
+    Database();
+    ~Database();
+    void connectionInit();
+
     std::vector<std::string> getInfo(std::string query);
+
 };
