@@ -20,9 +20,8 @@ private:
 public:
 
     Database();
-    ~Database();
     void connectionInit();
 
-    std::vector<std::string> getInfo(std::string query);
+    sql::ResultSet* getInfo(std::string query);
 
 };

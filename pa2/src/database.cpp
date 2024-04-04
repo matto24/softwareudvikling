@@ -1,22 +1,16 @@
 #include <iostream>
 #include "database.h"
 
-
-Database::Database() {
+Database::Database()
+{
     driver = nullptr;
     conn = nullptr;
     stmt = nullptr;
     res = nullptr;
 }
 
-Database::~Database() {
-    delete res;
-    delete stmt;
-    delete conn;
-}
-
-
-void Database::connectionInit() {
+void Database::connectionInit()
+{
     try
     {
         // Create a connection
@@ -26,22 +20,16 @@ void Database::connectionInit() {
 
         // Specify the database to use
         conn->setSchema("robot_worker");
-
     }
     catch (sql::SQLException &e)
     {
         // Error handling
         std::cout << "Error: " << e.what() << std::endl;
     }
-
 }
 
-
-
-std::vector<std::string> Database::getInfo(std::string query)
+sql::ResultSet *Database::getInfo(std::string query)
 {
-    std::vector<std::string> result;
-
     try
     {
         // Create a statement object
@@ -49,12 +37,6 @@ std::vector<std::string> Database::getInfo(std::string query)
 
         // Execute the query
         res = stmt->executeQuery(query);
-
-        while(res->next())
-        {
-            result.push_back(res->getString("name"));
-        }
-
     }
     catch (sql::SQLException &e)
     {
@@ -63,5 +45,5 @@ std::vector<std::string> Database::getInfo(std::string query)
     }
 
     // Return result
-    return result;
+    return res;
 }

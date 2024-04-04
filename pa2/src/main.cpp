@@ -1,17 +1,15 @@
 #include <iostream>
 #include "database.h"
-#include "client.cpp"
+#include "client.h"
 
-int main()
+int main(int argc, char const *argv[])
 {
     
     Database db;
     db.connectionInit();
 
-    Client cl;
-
+    Client cl(&db);
     cl.printTasks();
 
-    db.~Database();
     return 0;
 }
