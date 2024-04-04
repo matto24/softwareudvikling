@@ -7,6 +7,7 @@ Database::Database()
     conn = nullptr;
     stmt = nullptr;
     res = nullptr;
+    pstmt = nullptr;
 }
 
 void Database::connectionInit()
@@ -46,4 +47,22 @@ sql::ResultSet *Database::getInfo(std::string query)
 
     // Return result
     return res;
+}
+
+void Database::addTask(std::string taskname) {
+    try
+    {
+        //Prepare statement
+        pstmt = conn->prepareStatement("INSERT INTO task(name) VALUES(?)");
+        //Replace ? with taskname
+        pstmt -> setString(1, taskname);
+        //Execute update
+        pstmt->executeUpdate();
+
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
 }

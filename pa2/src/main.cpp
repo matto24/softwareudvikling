@@ -9,6 +9,7 @@ int main(int argc, char const *argv[])
     db.connectionInit();
 
     Client cl(&db);
+    cl.addTask();
     cl.printTasks();
 
     return 0;
