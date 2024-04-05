@@ -11,5 +11,5 @@ public:
 Client(Database *db);
 void printTasks();
 void addTask();
-
+void printRobots();
 };

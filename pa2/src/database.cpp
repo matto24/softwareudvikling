@@ -48,16 +48,16 @@ sql::ResultSet *Database::getInfo(std::string query)
     return res;
 }
 
-void Database::addTask(std::string taskName) {
+void Database::addTask(std::string taskName)
+{
     try
     {
-        //Prepare statement
+        // Prepare statement
         pstmt = conn->prepareStatement("INSERT INTO task(name) VALUES(?)");
-        //Replace ? with taskname
-        pstmt -> setString(1, taskName);
-        //Execute update
+        // Replace ? with taskname
+        pstmt->setString(1, taskName);
+        // Execute update
         pstmt->executeUpdate();
-
     }
     catch (sql::SQLException &e)
     {
@@ -66,30 +66,69 @@ void Database::addTask(std::string taskName) {
     }
 }
 
-void Database::removeTask() {
-     try
+void Database::removeTask()
+{
+    try
     {
-        //Find first task
+        // Find first task
         res = getInfo("SELECT name FROM task LIMIT 1");
-        if (res->next()) {
+        if (res->next())
+        {
             std::string taskName = res->getString("name");
             std::cout << "Task completed: " << res->getString("name") << std::endl;
 
-            //Prepare statement
+            // Prepare statement
             pstmt = conn->prepareStatement("DELETE FROM task WHERE name = ?");
-            //Replace ? with taskname
-            pstmt -> setString(1, taskName);
-            //Execute update
+            // Replace ? with taskname
+            pstmt->setString(1, taskName);
+            // Execute update
             pstmt->executeUpdate();
-        } else {
+        }
+        else
+        {
             std::cout << "No tasks found" << std::endl;
         }
-
-
     }
     catch (sql::SQLException &e)
     {
         // Error handling
         std::cout << "Error: " << e.what() << std::endl;
     }
-}  
+}
+
+void Database::addRobot(std::string robotName)
+{
+    try
+    {
+        // Prepare statement
+        pstmt = conn->prepareStatement("INSERT INTO robot(name) VALUES(?)");
+        // Replace ? with taskname
+        pstmt->setString(1, robotName);
+        // Execute update
+        pstmt->executeUpdate();
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+}
+
+void Database::removeRobot(std::string robotName)
+{
+    try
+    {
+        std::cout << "delete robot: " << robotName << std::endl;
+        // Prepare statement
+        pstmt = conn->prepareStatement("DELETE FROM robot WHERE name = ?");
+        // Replace ? with taskname
+        pstmt->setString(1, robotName);
+        // Execute update
+        pstmt->executeUpdate();
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+}

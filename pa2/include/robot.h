@@ -5,8 +5,9 @@ class Robot
 {
 private:
     Database _db;
+    std::string _name;
 public:
-    Robot(Database *db);
-
+    Robot(Database *db, std::string name);
+    ~Robot();
     void completeTask();
 };
