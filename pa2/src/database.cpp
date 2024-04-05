@@ -16,7 +16,8 @@ void Database::connectionInit()
     {
         // Create a connection
         driver = get_driver_instance();
-        conn = driver->connect("tcp://127.0.0.1:3306", "root", "Scrambler3Starting");
+        //Replace tcp, username, and password with your own
+        conn = driver->connect("tcp://127.0.0.1:3306", "root", "password");
 
         // Specify the database to use
         conn->setSchema("robot_worker");
