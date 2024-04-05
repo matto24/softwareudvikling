@@ -15,5 +15,5 @@ Robot::~Robot() {
 //Takes the first task from the list and removes it
 void Robot::completeTask(std::string taskName) {
   _db.addTaskToRobot(_name, taskName);
-  _db.removeTask();
+  _db.removeTask(taskName);
 }
