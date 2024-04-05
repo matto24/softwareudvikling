@@ -9,5 +9,5 @@ private:
 public:
     Robot(Database *db, std::string name);
     ~Robot();
-    void completeTask();
+    void completeTask(std::string taskName);
 };

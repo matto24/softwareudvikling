@@ -21,3 +21,8 @@ CREATE TABLE robot(
     PRIMARY KEY(name)
 );
 
+--Exercise 7: Tilføjer her en Available parameter til at tjekke om en robot er i gang med opgaven
+ALTER TABLE task ADD available BOOLEAN DEFAULT TRUE;
+
+
+SELECT * FROM task;

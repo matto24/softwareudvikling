@@ -66,6 +66,35 @@ void Database::addTask(std::string taskName)
     }
 }
 
+void Database::addTaskToRobot(std::string robotName, std::string taskName)
+{
+    try
+    {
+        res = getInfo("SELECT name FROM task WHERE avilable = TRUE LIMIT 1");
+        if (res->next())
+        {
+            // Prepare statement
+            pstmt = conn->prepareStatement("UPDATE robot SET current_task = ? WHERE robot_name = ?");
+            // Replace ?? with taskname
+            pstmt->setString(1, taskName);
+            pstmt->setString(2, robotName);
+            // Execute update
+            pstmt->executeUpdate();
+
+            pstmt = conn->prepareStatement("UPDATE task SET avilable = FALSE WHERE name = ?");
+            pstmt->setString(1, taskName);
+            pstmt->executeUpdate();
+        } else {
+            std::cout << "No tasks available" << std::endl;
+        }
+    }
+    catch (sql::SQLException &e)
+    {
+        // Error handling
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+}
+
 void Database::removeTask()
 {
     try

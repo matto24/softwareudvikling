@@ -30,6 +30,9 @@ public:
     //add task
     void addTask(std::string taskName);
 
+    //add task to robot
+    void addTaskToRobot(std::string robotName, std::string taskName);
+
     //remove task
     void removeTask();
 

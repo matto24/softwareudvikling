@@ -19,7 +19,7 @@ int main()
     std::cout << "----------------------------------------\n";
     cl.addTask();
     std::cout << "----------------------------------------\n";
-    rb.completeTask();
+    rb.completeTask("task 10");
     std::cout << "----------------------------------------\n";
     std::cout << "Tasks:\n";
     cl.printTasks();
