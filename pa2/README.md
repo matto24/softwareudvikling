@@ -1,6 +1,10 @@
 ### PA2
 
 Der er i dette projekt anvendt mysqlcppconn til at forbinde c++ programmet til en mysql database.
+
+Download kommando til ubuntu
+sudo apt-get install libmysqlcppconn-dev
+
 Kompilering kan gøres ved brug af mysqlcppconn og vedlagte CMakeLists.txt fil. 
 
 Hvis der er lyst til at teste programmet kan sql filen køres en gang for at oprette en database.
