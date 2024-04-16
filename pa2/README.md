@@ -1,5 +1,7 @@
 ### PA2
 
+- Mads Thede
+
 Der er i dette projekt anvendt mysqlcppconn til at forbinde c++ programmet til en mysql database.
 
 Download kommando til ubuntu
@@ -7,7 +9,7 @@ sudo apt-get install libmysqlcppconn-dev
 
 Kompilering kan gøres ved brug af mysqlcppconn og vedlagte CMakeLists.txt fil. 
 
-Hvis der er lyst til at teste programmet kan sql filen køres en gang for at oprette en database.
+Hvis der er lyst til at teste programmet kan sql filen (robot.session.sql) køres en gang for at oprette en database.
 Opgaverne kan testes ved brug af nogle funktioner, der er skrevet i programmet. I main funktionen er der tilføjet
 så man opretter en instans af en robot, kaldt robot, hvorefter de forskellige robotter udskrives.
 Samtidig bliver man queriet i terminalen om oprettelse af en ny task. 
